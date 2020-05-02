@@ -19,7 +19,7 @@ export class TTSService extends Service {
 
   async start() {
     this.ds.subscribeEvent('voice-output/request-speak', (text: string) => this.speakText(text));
-    this.setState(State.OK);
+    this.setState(State.OK, 'Ready for text-to-speech playback');
   }
 
   async stop(): Promise<void> {
