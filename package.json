@@ -1,0 +1,29 @@
+{
+  "name": "iw-tts",
+  "version": "0.0.1",
+  "description": "Mozilla TTS package for iw",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && npm run build-ts",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\"",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "author": "Benjamin Schmitz",
+  "license": "ISC",
+  "dependencies": {
+    "iw-base": "^0.0.1",
+    "memory-stream": "^1.0.0",
+    "pulseaudio2": "^0.2.2",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.2",
+    "rimraf": "^3.0.2",
+    "typescript": "~3.8.3"
+  },
+  "publishConfig": {
+    "directory": "dist"
+  }
+}
