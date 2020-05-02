@@ -15,8 +15,9 @@
   "dependencies": {
     "iw-base": "^0.0.1",
     "memory-stream": "^1.0.0",
-    "pulseaudio2": "^0.2.2",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "speaker": "^0.5.1",
+    "wav": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^13.13.2",
