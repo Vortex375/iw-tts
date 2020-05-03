@@ -35,13 +35,13 @@ export class TTSService extends Service {
       .on('response', (response: IncomingMessage) => {
         if (response.statusCode !== 200) {
           log.error({ statusCode: response.statusCode, statusMessage: response.statusMessage }, 'TTS service request failed');
-          this.setState(State.ERROR, 'TTS service unavailable');
+          this.setState(State.PROBLEM, 'TTS service unavailable');
           requestFailed = true;
         }
       })
       .on('error', (err) => {
         log.error({ err }, 'TTS service request failed');
-        this.setState(State.ERROR, 'TTS service unavailable');
+        this.setState(State.PROBLEM, 'TTS service unavailable');
         requestFailed = true;
       })
       .pipe(memoryStream);
